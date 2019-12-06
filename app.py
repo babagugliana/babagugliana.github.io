@@ -27,6 +27,7 @@ def is_user_logged():
     """Checks if user is logged and adjusts pages accordingly"""
     try:
         if session["username"] is not None and session["username"] in ["Neven", "Tiffany"]:
+            print("WOWOWOWOWOWOWOWWO")
             return "Logout"
         else:
             return "Login"
@@ -53,8 +54,8 @@ def logmein():
 def login():
     """Handles logging in."""
     if check_password(request.form["username"], request.form["password"]):
-        session["username"] = request.form["username"]
         login_user(User(request.form["username"]))
+        session["username"] = request.form["username"]
         return render_template("index.html", logged=is_user_logged())
     else:
         session["username"] = None
