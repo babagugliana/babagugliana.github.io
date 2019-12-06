@@ -16,7 +16,7 @@ login_manager.init_app(app)
 login_manager.login_view = 'login'
 app.config['SECRET_KEY'] = "lkkajdghdadkglajkgah"
 
-LOGGED = "Login" #used to specify in top right corner whether user needs to login
+#LOGGED = "Login" #used to specify in top right corner whether user needs to login
 
 
 class User(UserMixin):
@@ -25,11 +25,10 @@ class User(UserMixin):
 
 def is_user_logged():
     """Checks if user is logged and adjusts pages accordingly"""
-    global LOGGED
-    if current_user.is_authenticated:
-         LOGGED = "Logout"
+    if session["username"] is not None:
+         return "Logout"
     else:
-         LOGGED = "Login"
+         return "Login"
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -41,8 +40,7 @@ def logmein():
     """Goes to login page or logs out."""
     if current_user.is_authenticated:
         logout_user()
-        is_user_logged()
-    return render_template("login.html", logged=LOGGED)
+    return render_template("login.html", logged=is_user_logged())
 
 @app.route('/login', methods=['POST'])
 def login():
@@ -50,11 +48,10 @@ def login():
     if check_password(request.form["username"], request.form["password"]):
         session["username"] = request.form["username"]
         login_user(User(request.form["username"]))
-        is_user_logged()
-        return render_template("index.html", logged=LOGGED)
+        return render_template("index.html", logged=is_user_logged())
     else:
-        is_user_logged()
-        return render_template("login.html", logged=LOGGED, wrong_login="Username and/or Password Incorrect")
+        session["username"] = None
+        return render_template("login.html", logged=is_user_logged(), wrong_login="Username and/or Password Incorrect")
 
 def check_password(username, password):
     """Checks password to see if valid"""
@@ -73,19 +70,19 @@ def check_password(username, password):
 def protected():
     """Protected page that can only be seen if user is logged in."""
     if current_user.is_authenticated:
-        return render_template('correct_information.html', logged=LOGGED)
+        return render_template('correct_information.html', logged=is_user_logged())
     else:
-        return render_template('login.html', logged=LOGGED)
+        return render_template('login.html', logged=is_user_logged())
 
 @app.route('/')
 def index():
     """Main page."""
-    return render_template("index.html", logged=LOGGED)
+    return render_template("index.html", logged=is_user_logged())
 
 @app.route('/contact')
 def contact():
     """Contact me page."""
-    return render_template("contact.html", logged=LOGGED)
+    return render_template("contact.html", logged=is_user_logged())
 
 @app.route('/contact_form', methods=['POST'])
 def handle_contact_form():
@@ -99,7 +96,7 @@ def handle_contact_form():
                          request.form['experience'],
                          request.form['about_you']])
     return render_template('contact_response.html', 
-                           data=request.form, logged=LOGGED)
+                           data=request.form, logged=is_user_logged())
 
 @app.route('/contact_neven_form', methods=['POST'])
 def handle_contact_neven_form():
@@ -114,35 +111,35 @@ def handle_contact_neven_form():
         request.form['justin'].lower() == "below" and \
         request.form['concordia'].lower() == "concordia" and \
         request.form['mayweather'].lower() == "mayweather":
-        return render_template('correct_information.html', logged=LOGGED)
+        return render_template('correct_information.html', logged=is_user_logged())
     else:
-        return render_template('sorry.html', logged=LOGGED)
+        return render_template('sorry.html', logged=is_user_logged())
 
 @app.route('/mainbase')
 def mainbase():
     """Shows main base page."""
-    return render_template("mainbase.html", logged=LOGGED)
+    return render_template("mainbase.html", logged=is_user_logged())
 
 @app.route('/upcoming')
 def upcoming():
     """Shows upcoming page."""
-    return render_template("upcoming.html", logged=LOGGED)
+    return render_template("upcoming.html", logged=is_user_logged())
 
 @app.route('/world_map')
 def world_map():
     """Shows world map page."""
     images = ["static/pictures/world_map.JPG", "static/pictures/mainbase/base_map.jpeg"]
-    return render_template("world_map.html", images=images, logged=LOGGED)
+    return render_template("world_map.html", images=images, logged=is_user_logged())
 
 @app.route('/about')
 def about():
     """Shows about page."""
-    return render_template("about.html", logged=LOGGED)
+    return render_template("about.html", logged=is_user_logged())
 
 @app.route('/opportunities')
 def opportunities():
     """Shows opportunities page."""
-    return render_template("opportunities.html", logged=LOGGED)
+    return render_template("opportunities.html", logged=is_user_logged())
 
 @app.route('/contraptions')
 def contraptions():
@@ -175,7 +172,7 @@ def contraptions():
         "contraptions.html", 
         slide_list=slide_list,
         table_list=table_list,
-        logged=LOGGED)
+        logged=is_user_logged())
 
 if __name__ == '__main__':
     app.run(threaded=True, port=5000)
