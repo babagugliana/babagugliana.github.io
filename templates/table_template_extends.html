@@ -1,0 +1,54 @@
+{% extends "base_template.html" %}
+
+{% block head %}
+
+{% block title %}Cards Template{% endblock %}
+{{ super() }}
+
+{% endblock %}
+
+{% block content %}
+<div class="col-sm-8 text-left"> 
+    <h1>{% block table_title %}Page Title{% endblock %}</h1>
+    <p>{% block table_description %}Short description of what the following table entails.  Each of the elements in the table will
+      link to a description of the element, which will be contained below on the same page.{% endblock %}
+    </p>
+    <div class="container">
+        <table class="table table-dark table-striped">
+          {% block table_head %}
+          <thead>
+            <tr>
+              <th>Element 1</th>
+              <th>Element 2</th>
+              <th>Element 3</th>
+              <th>Element 4</th>
+              <th>Element 5</th>
+            </tr>
+          </thead>
+          {% endblock %}
+          <tbody>
+            {% for table_value in table_values %}
+            <tr>
+                <td>{{table_value[0]}}</td>
+                <td>{{table_value[1]}}</td>
+                <td>{{table_value[2]}}</td>
+                <td>{{table_value[3]}}</td>
+                <td>{{table_value[4]}}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    <hr>
+    {% for slide in slide_list %}
+    <div class="media">
+        <img src="{{slide[0]}}" class="align-self-start mr-3" style="width:60px">
+        <div class="media-body">
+          <h4>{{slide[1]}}</h4>
+          <p>{{slide[2]}}</p>
+        </div>
+      </div>
+    {% endfor %}
+    <hr>
+  </div>
+{% endblock %}

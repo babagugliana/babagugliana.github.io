@@ -1,0 +1,36 @@
+{% extends "base_template.html" %}
+
+{% block head %}
+
+{% block title %}Contact{% endblock %}
+{{ super() }}
+
+{% endblock %}
+
+{% block content %}
+<h1>Contact Neven</h1>
+<hr>
+<p>Welcome to the contact page! If you would like to contact Neven for any special inquiries, please <br>
+fill out the following questionaire and Neven will determine if you are worthy of contacting him!</p>
+<hr>
+<h3>Contact Questionaire</h3>
+<p>Choose wisely...</p>
+<img src="/static/pictures/herobrine.jpg" 
+alt="Minecraft Party" class="img-square" width="400" height="200" align="middle">
+<form action="/contact_neven_form" method="post">
+  <label>Do you enjoy Minecraft? [yes/no] <input type="text" name="enjoy"/></label><br/>
+  <label>Do you like Pizza? [yes/no] <input type="text" name="pizza"/></label><br/>
+  <label>What is the best age to be? [number] <input type="text" name="bestage"/></label><br/>
+  <label>What is the best sport? [text] <input type="text" name="sport"/></label><br/>
+  <label>Who is the king? [Neven] <input type="text" name="king"/></label><br/>
+  <label>Messi or Ronaldo? [text] <input type="text" name="messi"/></label><br/>
+  <label>Lebron or Jordan? [text] <input type="text" name="jordan"/></label><br/>
+  <label>Is Justin's IQ above or below 100? [above/below] <input type="text" name="justin"/></label><br/>
+  <label>Concordia or McGill? [text] <input type="text" name="concordia"/></label><br/>
+  <label>Mayweather or Pacquiao? [text] <input type="text" name="mayweather"/></label><br/>
+  <button type="submit">Send</button>
+  <button type="reset">Clear</button>
+</form>
+<br><br>
+<p>If you are already logged in, you can skip this step and go here: <a href="/protected">Contact Page</a></p>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends "base_template.html" %}
+
+{% block head %}
+
+{% block title %}Cards Template{% endblock %}
+{{ super() }}
+
+{% endblock %}
+
+{% block content %}
+  <div class="col-sm-8 text-left">
+    <h1>{% block cards_title %}Cards Template{% endblock %}</h1>
+    <p>{% block description %}The cards template will be used to display a picture and description.
+      It will primarily be used as a template for the About page and the Opportunities page.
+      {% endblock %}
+    </p>
+    <div class="container">
+      <h2>{% block main_title %}Title{% endblock %}</h2>
+      <div class="row">
+        <div class="col col-md-3">
+          <div class="card" style="width:220px">
+            {% block card1_image %}
+            <img class="card-img-top" src="static/pictures/neven.JPG" alt="Card image" style="width:220px; height:240px">
+            {% endblock %}
+            <div class="card-body">
+              <h4 class="card-title">{% block card1_title %}Card 1{% endblock %}</h4>
+              <p class="card-text">{% block card1_text %}Card 1 Description{% endblock %}</p>
+            </div>
+          </div>
+        </div>
+        <div class="col col-md-9"></div>
+          <div class="card" style="width:220px">
+            {%  block card2_image %}
+            <img class="card-img-top" src="static/pictures/justin.JPG" alt="Card image" style="width:100%; height:240px">
+            {% endblock %}
+            <div class="card-body">
+              <h4 class="card-title">{% block card2_title %}Card 2{% endblock %}</h4>
+              <p class="card-text">{% block card2_text %}Card 2 Description{% endblock %}</p>
+            </div>
+          </div>
+        </div>
+    </div>
+        <br><br>
+        <div class="col col-md-12"></div>
+          <div class="card" style="width:220px">
+            {% block card3_image %}
+            <img class="card-img-top" src="static/pictures/Tiffany.JPG" alt="Card image" style="width:100%; height:240px">
+            {% endblock %}
+            <div class="card-body">
+              <h4 class="card-title">{% block card3_title %}Card 3{% endblock %}</h4>
+              <p class="card-text">{% block card3_text %}Card3 Description{% endblock %}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

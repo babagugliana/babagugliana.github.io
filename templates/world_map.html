@@ -1,0 +1,20 @@
+{% extends "carousel_template_2_extends.html" %}
+
+{% block head %}
+
+{% block title %}World Map{% endblock %}
+{{ super() }}
+
+{% endblock %}
+
+{% block content %}
+{% block carousel %} {{ super() }} {% endblock %}
+{% block page_title %}<h1>World Map</h1>{% endblock %}
+{% block page_description %}<p>Welcome to a map of all of Neven World!  This map took a very, very
+long time to put together!  Neven World is 25 square kilometers in size!  Since each level 3 map
+depicts 1 square kilometer, Neven and Justin had to build 25 such maps.  In order to reveal everything
+on the map, Neven and Justin had to actually traverse the entire map!  As you can imagine, this is no small
+feat, and took weeks to complete.  Many injuries were incurred and resources were spent.  In the end,
+the entire map was built and mounted in the throne room, where only the worthy can enter!</p>
+{% endblock %}
+{% endblock %}

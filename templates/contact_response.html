@@ -1,0 +1,22 @@
+{% extends "base_template.html" %}
+
+{% block head %}
+
+{% block title %}Opportunities{% endblock %}
+{{ super() }}
+
+{% endblock %}
+
+{% block content %}
+<h1>Application Receives</h1>
+<hr>
+<p>Thank you, {{ data.name }} for applying to join the Neven World team.  We sincerely appreciate <br>
+your application!  We will contact you by email at {{ data.email }} or by phone at {{ data.phone }}.<br>
+Again, thanks for your interest, you will hear from us soon!</p>
+<hr>
+<h3>Next steps...</h3>
+<p>Keep playing Minecraft!!!
+    <img src="/static/pictures/party.png" 
+    alt="Minecraft Party" class="img-square" width="400" height="200" align="middle">
+</p>
+{% endblock %}

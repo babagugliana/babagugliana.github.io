@@ -1,0 +1,213 @@
+{% extends "carousel_template_extends.html" %}
+
+{% block head %}
+
+{% block title %}Main Base Page{% endblock %}
+{{ super() }}
+
+{% endblock %}
+
+{% block content %}
+{% block carousel_title %}<h1>Main Base</h1>{% endblock %}
+{% block carousel_description %}
+Welcome to the description of the main base!  This page will describe the different parts of the main base!
+{% endblock %}
+{% block list_and_descriptions %}
+<a href=/mainbase class="list-group-item list-group-item-action flex-column align-items-start">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Castle</h5>
+    </div>
+    <p class="mb-1">The main castle is where all the magic happens. The king and queen sleep
+      in the castle, and do many activities such as brewing potions and cooking food.  Valuable
+      items such as armor and weapons are also kept here.
+    </p>
+    <small>"All hail the King!"</small>
+  </a>
+  <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Courtyard</h5>
+    </div>
+    <p class="mb-1">The courtyard exists for leisurely purposes.  It contains a pool and the beautiful
+      Dragon statue that took weeks to build.  It is where guests are brought.
+    </p>
+    <small class="text-muted">"Beware of the Dragon!"</small>
+  </a>
+  <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">Basement</h5>
+    </div>
+    <p class="mb-1">The basement is where the first parts of the base were ever built.  When the king and
+      queen were in their infancy, they found refuge in the basement and continued to build the majestic
+      palace seen today from there.
+    </p>
+    <small class="text-muted">"Where it all started."</small>
+  </a>
+  <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">Animal Farm</h5>
+      </div>
+      <p class="mb-1">The animal farm serves to feed the inhabitants of the castle.  It contains 
+        pigs, sheep, and cows.
+      </p>
+      <small class="text-muted">"Oink oink."</small>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">Plant Farm</h5>
+        </div>
+        <p class="mb-1">The plant farm produces many vegatables for the inhabitants of Neven World.
+          It contains beets, carrots, wheat, pumpkins and melons.
+        </p>
+        <small class="text-muted">"The pumpkins and melons are farmed automatically!"</small>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">Mines</h5>
+        </div>
+        <p class="mb-1">The mines are a vast network used for mining valuable resources such as
+          gold, iron, and diamonds.
+        </p>
+        <small class="text-muted">"A lot of time was lost in the mines."</small>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">Prison</h5>
+        </div>
+        <p class="mb-1">The prison contains villagers that have been brought into the main base from
+          across Neven World.  They now work for Neven.
+        </p>
+        <small class="text-muted">"They didn't have a choice."</small>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">Mob Grinder</h5>
+        </div>
+        <p class="mb-1">The mob grinder is a facility built to spawn enemies, after which they will
+          fall to their death, dropping valuable resources.
+        </p>
+        <small class="text-muted">"They didn't have a chance."</small>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">Throne Room</h5>
+        </div>
+        <p class="mb-1">The throne room is a secret room that only the worthy can enter.  It is
+          hidden from plain sight and can only be access by those who know the secret. It contains many valuable resources.
+        </p>
+        <small class="text-muted">"Kings and their thrones..."</small>
+    </a>
+  {% endblock %}
+
+  {% block carousel %}
+  <div id="myCarousel" class="carousel slide">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+        <li data-target="#myCarousel" data-slide-to="4"></li>
+        <li data-target="#myCarousel" data-slide-to="5"></li>
+        <li data-target="#myCarousel" data-slide-to="6"></li>
+        <li data-target="#myCarousel" data-slide-to="7"></li>
+        <li data-target="#myCarousel" data-slide-to="8"></li>
+     
+      </ol>
+    
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="static/pictures/mainbase/castle.JPG" alt="Castle">
+          <div class="carousel-caption">
+              <h3>Castle</h3>
+              <p>Fit for a king.  
+              </p>
+          </div>
+        </div>
+    
+        <div class="item">
+          <img src="static/pictures/mainbase/courtyard.JPG" alt="Courtyard">
+          <div class="carousel-caption">
+              <h3>Courtyard</h3>
+              <p>Large open area designed for leisure.  
+              </p>
+          </div>
+        </div>
+    
+        <div class="item">
+          <img src="static/pictures/mainbase/basement.JPG" alt="New York">
+          <div class="carousel-caption">
+              <h3>Basement</h3>
+              <p>Where it all started.  
+              </p>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="static/pictures/mainbase/farm1.JPG" alt="Farm1">
+          <div class="carousel-caption">
+              <h3>Animal Farm</h3>
+              <p>A farm containing pigs, cows, chickens, and sheep. 
+              </p>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="static/pictures/mainbase/farm2.JPG" alt="Farm2">
+          <div class="carousel-caption">
+              <h3>Plant Farm</h3>
+              <p>A farm containing carrots, wheat, beets, pumpkins, and melons.
+              </p>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="static/pictures/mainbase/mines.JPG" alt="Mines">
+          <div class="carousel-caption">
+              <h3>Mines</h3>
+              <p>Gold, iron, diamond, redstone, and Lapis Lazuli mine.
+              </p>
+          </div>
+        </div>
+
+        <div class="item">
+          <img src="static/pictures/mainbase/prison.JPG" alt="Prison">
+          <div class="carousel-caption">
+              <h3>Prison</h3>
+              <p>Villager prison indoor work camp. 
+              </p>
+          </div>
+        </div>  
+
+        <div class="item">
+            <img src="static/pictures/mainbase/mob_grinder.JPG" alt="Mob Grinder">
+            <div class="carousel-caption">
+                <h3>Mob Grinder</h3>
+                <p>A special area which encourages monsters to spawn and subsequently fall to their death. 
+                </p>
+            </div>
+          </div>
+        
+        <div class="item">
+            <img src="static/pictures/mainbase/throne.JPG" alt="Throne Room">
+            <div class="carousel-caption">
+                <h3>Secret Throne Room</h3>
+                <p>Holds valuable resources such as diamond, gold, emerald, and iron.
+                  Also holds rare dragon heads and dragon eggs. 
+                </p>
+            </div>
+        </div> 
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div> 
+  {% endblock %}
+{% endblock %}

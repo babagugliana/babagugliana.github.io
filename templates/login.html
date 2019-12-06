@@ -1,0 +1,23 @@
+{% extends "base_template.html" %}
+
+{% block head %}
+
+{% block title %}Opportunities{% endblock %}
+{{ super() }}
+
+{% endblock %}
+
+{% block content %}
+<h1>Login Page</h1>
+<hr>
+<p>You can use this page to log in if you have an username and password. </p>
+<hr>
+<h3>Login Form</h3>
+<p>{{ wrong_login }}</p>
+<form action="/login" method="post">
+  <label>Username <input type="text" name="username"/></label><br/>
+  <label>password <input type="password" name="password"/></label><br/>
+  <button type="submit">Send</button>
+  <button type="reset">Clear</button>
+</form>
+{% endblock %}

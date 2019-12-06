@@ -1,0 +1,21 @@
+{% extends "base_template.html" %}
+
+{% block head %}
+
+{% block title %}Correct Contact Information{% endblock %}
+{{ super() }}
+
+{% endblock %}
+
+{% block content %}
+<h1>Sorry...!</h1>
+<hr>
+<p>You have been deemed unworthy contact Neven!!! <br><br>
+Please try again another time...<br>
+<br>
+Looking forward to NOT hearing from you!<br></p>
+<img src="/static/pictures/unworthy.jpg" 
+alt="Worthy" class="img-square" width="400" height="200" align="middle">
+<br>
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "base_template.html" %}
+
+{% block head %}
+
+{% block title %}Opportunities{% endblock %}
+{{ super() }}
+
+{% endblock %}
+
+{% block content %}
+<h1>Opportunities</h1>
+<hr>
+<p>Welcome to the opportunities page!  We are always look for bright, motivated individuals to <br>
+join us in our question to explore and expand Neven World even further!  We are looking for interns, <br>
+partners, contractors, and full time team members!  Please fill out the form below and well get back <br>
+to you as soon as we can!!!</p>
+<hr>
+<h3>Application Form</h3>
+<form action="/contact_form" method="post">
+  <label>Your Name <input type="text" name="name"/></label><br/>
+  <label>Your Email <input type="email" name="email"/></label><br/>
+  <label>Your Phone <input type="number" name="phone"/></label><br/>
+  <label>Desired Position <input type="text" name="position"/></label><br/>
+  <label>Minecraft Experience <textarea name="experience"></textarea></label><br/>
+  <label>A Little About Yourself <textarea name="about_you"></textarea></label><br/>
+  <button type="submit">Send</button>
+  <button type="reset">Clear</button>
+</form>
+{% endblock %}
