@@ -25,10 +25,13 @@ class User(UserMixin):
 
 def is_user_logged():
     """Checks if user is logged and adjusts pages accordingly"""
-    if session["username"] is not None and session["username"] in ["Neven", "Tiffany"]:
-         return "Logout"
-    else:
-         return "Login"
+    try:
+        if session["username"] is not None and session["username"] in ["Neven", "Tiffany"]:
+            return "Logout"
+        else:
+            return "Login"
+    except:
+        return "Login"
 
 @login_manager.user_loader
 def load_user(user_id):
