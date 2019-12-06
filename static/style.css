@@ -4,6 +4,10 @@
   padding:20px;
 }
 
+title {
+  display: none;
+}
+
 .center {
   display: block;
   margin-left: auto;
