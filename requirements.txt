@@ -1,7 +1,6 @@
 cmake==3.13.3
 Click==7.0
 cycler==0.10.0
-dlib==19.18.0
 Flask==1.1.1
 Flask-Login==0.4.1
 imutils==0.5.3
