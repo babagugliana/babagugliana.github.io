@@ -46,8 +46,8 @@ def logmein():
     try:
         if session["username"] in ["Neven", "Tiffany"]:
             print("LOGGING OUT SON")
-            session["username"] == "peter"
             logout_user()
+            print(session["username"])
     except:
         pass
     return render_template("login.html", logged=is_user_logged())
