@@ -28,6 +28,7 @@ def is_user_logged():
     try:
         if session["username"] is not None and session["username"] in ["Neven", "Tiffany"]:
             print("WOWOWOWOWOWOWOWWO")
+            print(session["username"])
             return "Logout"
         else:
             return "Login"
