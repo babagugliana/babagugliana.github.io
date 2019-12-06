@@ -47,6 +47,7 @@ def logmein():
         if session["username"] in ["Neven", "Tiffany"]:
             print("LOGGING OUT SON")
             logout_user()
+            session.pop('username', None)
             print(session["username"])
     except:
         pass
