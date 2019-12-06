@@ -48,7 +48,8 @@ def logmein():
 def login():
     """Handles logging in."""
     if check_password(request.form["username"], request.form["password"]):
-        login_user(User(1))
+        session["username"] = request.form["username"]
+        login_user(User(request.form["username"]))
         is_user_logged()
         return render_template("index.html", logged=LOGGED)
     else:
