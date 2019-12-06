@@ -17,7 +17,7 @@ login_manager.login_view = 'login'
 app.config['SECRET_KEY'] = "lkkajdghdadkglajkgah"
 
 #LOGGED = "Login" #used to specify in top right corner whether user needs to login
-session["username"] = None
+
 
 class User(UserMixin):
   def __init__(self,id):
@@ -25,7 +25,7 @@ class User(UserMixin):
 
 def is_user_logged():
     """Checks if user is logged and adjusts pages accordingly"""
-    if session["username"] is not None:
+    if session["username"] not in ["Neven", "Tiffany"]:
          return "Logout"
     else:
          return "Login"
