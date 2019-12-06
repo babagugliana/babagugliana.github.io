@@ -44,7 +44,8 @@ def load_user(user_id):
 def logmein():
     """Goes to login page or logs out."""
     try:
-        if session["username"] is not None:
+        if session["username"] in ["Neven", "Tiffany"]:
+            print("LOGGING OUT SON")
             session["username"] == None
             logout_user()
     except:
