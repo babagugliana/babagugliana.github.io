@@ -139,7 +139,7 @@ def upcoming():
 @app.route('/world_map')
 def world_map():
     """Shows world map page."""
-    images = ["static/pictures/world_map.JPG", "static/pictures/mainbase/base_map.jpeg"]
+    images = ["static/pictures/world_map.JPG", "static/pictures/base_map.jpeg"]
     return render_template("world_map.html", images=images, logged=is_user_logged())
 
 @app.route('/about')
