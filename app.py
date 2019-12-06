@@ -38,8 +38,9 @@ def load_user(user_id):
 @app.route('/logmein')
 def logmein():
     """Goes to login page or logs out."""
-    if current_user.is_authenticated:
-        logout_user()
+    if session["username"] is not None:
+        session["username"] == None
+        # logout_user()
     return render_template("login.html", logged=is_user_logged())
 
 @app.route('/login', methods=['POST'])
