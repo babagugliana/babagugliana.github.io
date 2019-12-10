@@ -26,14 +26,14 @@ class User(UserMixin):
 def is_user_logged():
     """Checks if user is logged and adjusts pages accordingly"""
     try:
-        if session["username"] is not None and session["username"] in ["Neven", "Tiffany"]:
+        if session["username"] is not None and session["username"] in ["Neven", "Bashar", "Tiffany"]:
             print("WOWOWOWOWOWOWOWWO")
             print(session["username"])
             return ["Logout", "Bashar"]
         else:
-            return ["Login", ""]
+            return ["Login", None]
     except:
-        return ["Login", ""]
+        return ["Login", None]
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -44,7 +44,7 @@ def load_user(user_id):
 def logmein():
     """Goes to login page or logs out."""
     try:
-        if session["username"] in ["Neven", "Tiffany"]:
+        if session["username"] in ["Neven", "Tiffany", "Bashar"]:
             print("LOGGING OUT SON")
             logout_user()
             session.pop('username', None)
@@ -68,11 +68,15 @@ def check_password(username, password):
     """Checks password to see if valid"""
     username1 = "Neven"
     username2 = "Tiffany"
+    username3 = "Bashar"
     password1 = "Tiffany12"
     password2 = "Nevenisthebest"
+    password3 = "jeffisgay"
     if username == username1 and password == password1:
         return True
     elif username == username2 and password == password2:
+        return True
+    elif username == username3 and password == password3:
         return True
     else:
         return False
