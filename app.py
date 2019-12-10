@@ -29,11 +29,11 @@ def is_user_logged():
         if session["username"] is not None and session["username"] in ["Neven", "Tiffany"]:
             print("WOWOWOWOWOWOWOWWO")
             print(session["username"])
-            return "Logout"
+            return ["Logout", "Bashar"]
         else:
-            return "Login"
+            return ["Login", ""]
     except:
-        return "Login"
+        return ["Login", ""]
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -82,6 +82,14 @@ def protected():
     """Protected page that can only be seen if user is logged in."""
     if current_user.is_authenticated:
         return render_template('correct_information.html', logged=is_user_logged())
+    else:
+        return render_template('login.html', logged=is_user_logged())
+
+@app.route('/bashar')
+def bashar():
+    """Protected page that can only be seen if user is logged in."""
+    if current_user.is_authenticated:
+        return render_template('bashar.html', logged=is_user_logged())
     else:
         return render_template('login.html', logged=is_user_logged())
 
