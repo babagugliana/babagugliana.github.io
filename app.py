@@ -31,9 +31,9 @@ def is_user_logged():
             print(session["username"])
             return ["Logout", "Bashar"]
         else:
-            return ["Login", None]
+            return ["Login", ""]
     except:
-        return ["Login", None]
+        return ["Login", ""]
 
 @login_manager.user_loader
 def load_user(user_id):
