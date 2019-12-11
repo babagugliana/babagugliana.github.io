@@ -89,7 +89,7 @@ def protected():
     else:
         return render_template('login.html', logged=is_user_logged())
 
-@app.route('/bashar')
+@app.route('/Bashar')
 def bashar():
     """Protected page that can only be seen if user is logged in."""
     if current_user.is_authenticated:
